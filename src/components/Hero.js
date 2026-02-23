@@ -1,33 +1,86 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Type from "./Type";
 
 function Hero() {
   return (
-    <div className="bg-[url(../public/home-bg.jpg)] h-2/3 flex flex-wrap items-center justify-center flex-col lg:flex-row">
-      <div className="w-full lg:w-1/2 h-1/2 lg:h-full flex items-center justify-center flex-col mt-10">
-        <div className=" flex gap-5 items-center lg:items-start justify-center flex-col">
-          <h3 className="flex text-white text-4xl gap-2">
-            Hi There!
-            <span>
-              <img
-                src="https://media.tenor.com/SNL9_xhZl9oAAAAi/waving-hand-joypixels.gif"
-                alt="hand"
-                className="h-10"
-              />
-            </span>
-          </h3>
-          <span className="flex text-white text-4xl lg:text-5xl gap-2 font-bold">
-            I'M <p className="text-[#ad50eb]"> RITESH</p>
-          </span>
-          <span className="flex text-[#ad50eb] text-2xl lg:text-3xl gap-2 font-semibold bg-gray-800 h-20 lg:h-32 w-72 lg:w-80 items-center justify-center px-5 rounded-md shadow-xl capitalize text-center">
-            <Type />
-          </span>
-        </div>
+    <section className="relative min-h-screen flex items-center bg-[#F6F3EE] overflow-hidden">
+
+      {/* subtle background glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-[#D8C9A3]/20 blur-[160px] rounded-full" />
+        <div className="absolute bottom-[-200px] right-[-150px] w-[500px] h-[500px] bg-[#000]/5 blur-[140px] rounded-full" />
       </div>
-      <div className="w-full lg:w-1/2 h-full flex items-center justify-center">
-        <img src="home-main.svg" alt="" className="h-[70vh]" />
+
+      {/* Left content */}
+      <div className="relative z-10 w-full lg:w-1/2 px-10 lg:px-28 text-center lg:text-left">
+
+        {/* Greeting */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="uppercase tracking-[0.4em] text-xs text-gray-500 mb-6"
+        >
+          Portfolio 2026
+        </motion.p>
+
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="text-5xl lg:text-7xl font-extralight text-gray-900 leading-tight"
+        >
+          Hi, I’m{" "}
+          <span className="italic font-light tracking-wide text-[#C6B58E]">
+            Vesper
+          </span>
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 1.2 }}
+          className="mt-8 text-lg lg:text-xl text-gray-600 font-light max-w-md leading-relaxed"
+        >
+          Designing and engineering refined digital experiences —
+          where aesthetics meet scalable architecture.
+        </motion.p>
+
+        {/* Type animation */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="mt-12 text-xl lg:text-2xl text-[#C6B58E] font-light tracking-wide"
+        >
+          <Type />
+        </motion.div>
+
       </div>
-    </div>
+
+      {/* Right image */}
+      <div className="hidden lg:flex w-1/2 justify-center items-center pr-32 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.4 }}
+          className="relative"
+        >
+          <img
+            src="/me.jpg"
+            alt="Vesper"
+            className="w-[800px] h-[400px] object-cover rounded-[2.5rem] shadow-[0_40px_100px_rgba(0,0,0,0.15)] transition-all duration-700 hover:scale-[1.02]"
+          />
+
+          {/* subtle frame border */}
+          <div className="absolute inset-0 rounded-[2.5rem] border border-black/10 pointer-events-none" />
+        </motion.div>
+      </div>
+
+    </section>
   );
 }
 

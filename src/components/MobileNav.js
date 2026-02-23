@@ -1,74 +1,46 @@
 import React from "react";
-import {
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-  AiFillStar,
-} from "react-icons/ai";
-import { FiUser, FiFileText } from "react-icons/fi";
 import { DiGitBranch } from "react-icons/di";
-
 import { Link } from "react-router-dom";
+
 function MobileNav({ showNav, setShowNav }) {
   return (
     <div
       className={
         showNav
-          ? "fixed h-1/2 bg-gradient-to-r from-purple-900 to-violet-900  w-full top-[68px] left-0 rounded-b-md border-2 border-t-0 border-purple-700 z-50 transition-all duration-[500ms] overflow-hidden"
-          : "fixed h-0 bg-gradient-to-r from-purple-900 to-violet-900  w-full top-[68px] left-0 rounded-b-md  z-50 transition-all duration-[500ms] overflow-hidden"
+          ? "fixed h-1/2 bg-[#F5F5DC]/95 backdrop-blur-md w-full top-[68px] left-0 rounded-b-2xl border border-gray-300 shadow-xl z-50 transition-all duration-[500ms] overflow-hidden"
+          : "fixed h-0 bg-[#F5F5DC]/95 backdrop-blur-md w-full top-[68px] left-0 rounded-b-2xl z-50 transition-all duration-[500ms] overflow-hidden"
       }
     >
-      <div className=" block items-center justify-center text-white">
-        <ul className="flex gap-8 flex-col mt-10">
-          <li className="relative group">
-            <Link
-              to={"/"}
-              className="flex gap-1 items-center justify-center cursor-pointer text-base font-bold relative"
-              onClick={() => setShowNav(false)}
-            >
-              <AiOutlineHome fontSize={20} />
-              <span className="">Home</span>
-            </Link>
-          </li>
-          <li className="relative group">
-            <Link
-              to={"/about"}
-              className="flex gap-1 items-center justify-center cursor-pointer text-base font-bold relative"
-              onClick={() => setShowNav(false)}
-            >
-              <FiUser fontSize={20} />
-              <span className="">About</span>
-            </Link>
-          </li>
-          <li className="relative group">
-            <Link
-              to={"/projects"}
-              className="flex gap-1 items-center justify-center cursor-pointer text-base font-bold relative"
-              onClick={() => setShowNav(false)}
-            >
-              <AiOutlineFundProjectionScreen fontSize={20} />
-              <span className="">Projects</span>
-            </Link>
-          </li>
-          <li className="relative group">
-            <Link
-              to={"/resume"}
-              className="flex gap-1 items-center justify-center cursor-pointer text-base font-bold relative"
-              onClick={() => setShowNav(false)}
-            >
-              <FiFileText fontSize={20} />
-              <span className="">Resume</span>
-            </Link>
-          </li>
+      <div className="flex flex-col items-center justify-center text-gray-800 font-serif tracking-wide">
+
+        {/* Nav Links */}
+        <ul className="flex flex-col gap-6 mt-10 text-lg">
+          {["Home", "About", "Projects", "Resume"].map((item) => (
+            <li key={item} className="relative group">
+              <Link
+                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                onClick={() => setShowNav(false)}
+                className="relative cursor-pointer transition-all duration-200"
+
+              >
+                {item}
+
+                {/* subtle underline */}
+                <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-gray-600 transition-all duration-300 group-hover:w-full" />
+              </Link>
+            </li>
+          ))}
         </ul>
 
+        {/* GitHub Button */}
         <a
           href="https://github.com/riteshk-007/portfolio"
           target="_blank"
           rel="noreferrer"
-          className="flex  w-24 my-5 mx-auto gap-2 justify-center items-center text-lg bg-fuchsia-900 px-3 py-[3px] border border-purple-700 rounded-sm"
+          className="mt-8 flex items-center gap-2 px-6 py-2 border border-gray-400 rounded-full text-sm text-gray-800 hover:bg-gray-200 transition-all duration-300"
         >
-          <DiGitBranch fontSize={18} />
-          <AiFillStar fontSize={18} />
+          <DiGitBranch fontSize={16} />
+          GitHub
         </a>
       </div>
     </div>

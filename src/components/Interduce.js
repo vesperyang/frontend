@@ -1,39 +1,56 @@
 import React from "react";
-import Tilt from "react-parallax-tilt";
+import { useNavigate } from "react-router-dom";
+
+const identities = [
+  { title: "What I Craft", path: "/craft" },
+  { title: "What I Explore", path: "/explore" },
+  { title: "My Profile", path: "/resume" },
+  { title: "Contact Me", path: "/contact" },
+];
 
 function Interduce() {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex flex-wrap items-center justify-center flex-col lg:flex-row relative overflow-hidden">
-      <img
-        src="./star.jpg"
-        alt=""
-        className="h-full w-full object-cover opacity-10 absolute bottom-0"
-      />
-      <div className="w-full lg:w-1/2 h-1/2 lg:h-full flex items-center justify-center flex-col my-10 lg:gap-10">
-        <h1 className="flex text-white text-2xl lg:text-4xl gap-2 my-10">
-          LET ME <p className="text-[#ad50eb]">INTRODUCE</p> MYSELF
-        </h1>
-        <div className="flex items-center m-auto justify-center w-11/12 lg:w-3/4 lg:mr-10">
-          <span className="flex flex-col gap-3 text-white items-start  text-base justify-center font-semibold lg:text-lg">
-            <p>
-              I'm Ritesh, a Full-stack Web Developer from New Delhi with
-              expertise in React, Next.js, Node.js, and Express.js. With over
-              1.5 years of experience, I've built high-performing web
-              applications, including blogging platforms and e-commerce
-              solutions. As a Tech Lead & Web Developer Intern at MnA Studio, I
-              optimized site performance using Next.js. With a passion for
-              learning and attention to detail, I'm committed to delivering
-              impactful digital experiences. Let's connect and create together!
-            </p>
-          </span>
+    <section className="relative py-32 bg-[#F5F5DC] overflow-hidden">
+
+      <div className="max-w-6xl mx-auto px-10 text-center">
+
+        <h2 className="text-3xl lg:text-4xl font-serif text-gray-800 tracking-wide mb-16">
+          Who I Am
+        </h2>
+
+        <div className="flex flex-wrap justify-center gap-12">
+
+          {identities.map((item) => (
+            <div
+              key={item.title}
+              onClick={() => navigate(item.path)}
+              className="
+                cursor-pointer
+                w-[180px] h-[180px] 
+                rounded-full 
+                bg-gradient-to-br from-[#F5F5DC]/80 to-white/50 
+                border border-gray-300
+                backdrop-blur-md 
+                shadow-xl 
+                flex items-center justify-center 
+                text-xl font-serif text-gray-800 
+                hover:scale-110 transition-all duration-500 
+                hover:shadow-2xl 
+                animate-float
+                text-center
+                p-4
+              "
+            >
+              {item.title}
+            </div>
+          ))}
+
         </div>
+
       </div>
-      <div className="w-full lg:w-1/2 h-full flex items-center justify-center p-10">
-        <Tilt>
-          <img src="man.png" alt="" className="object-cover" />
-        </Tilt>
-      </div>
-    </div>
+    </section>
   );
 }
 

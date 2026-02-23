@@ -1,18 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
 body::-webkit-scrollbar {
-  width: 10px; /* width of the entire scrollbar */
+  width: 12px; /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: #351e5f; /* color of the tracking area */
+  background: #c9b46a; /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #4e0097; /* color of the scroll thumb */
+  background-color: #070509; /* color of the scroll thumb */
   border-radius: 5px; /* roundness of the scroll thumb */
-  border: 0.1px solid #4e0097; /* creates padding around scroll thumb */
+  border: 0.1px solid #ddd1e8; /* creates padding around scroll thumb */
 }
 .react-pdf__Page__textContent  {
  background: transparent !important;
