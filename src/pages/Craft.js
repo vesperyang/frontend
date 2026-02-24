@@ -156,13 +156,13 @@ const careerTimeline = [
 
 function CareerTimeline() {
   return (
-    <div className="relative w-screen left-1/2 -translate-x-1/3 mb-60">
+    <div className="relative w-full mb-60">
       <motion.h4
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-xl font-large mb-20 text-center"
+        className="text-xl mb-20 text-center"
       >
         Career Timeline
       </motion.h4>
@@ -173,14 +173,13 @@ function CareerTimeline() {
         whileInView={{ scaleY: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="absolute left-1/2 top-32 bottom-0 w-[1px] bg-white/30 origin-top -translate-x-1/2"
+        className="hidden md:block absolute left-1/2 top-32 bottom-0 w-[1px] bg-white/30 origin-top -translate-x-1/2"
       />
 
-      <div className="max-w-6xl mx-auto space-y-10">
+      <div className="max-w-6xl mx-auto space-y-16 px-4">
         {careerTimeline.map((item, i) => {
           const isLeft = i % 2 === 0;
           const imgSrc = item.img || "/default-company.png";
-
 
           return (
             <motion.div
@@ -189,7 +188,7 @@ function CareerTimeline() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="relative grid grid-cols-2 items-center gap-4"
+              className="relative grid grid-cols-1 md:grid-cols-2 items-center gap-10"
             >
               {/* 左边 */}
               <div className={`pr-16 flex justify-end ${isLeft ? "text-right" : "text-left"}`}>

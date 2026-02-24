@@ -45,8 +45,9 @@ function Hero() {
           transition={{ delay: 0.6, duration: 1.2 }}
           className="mt-8 text-lg lg:text-xl text-gray-600 font-light max-w-md leading-relaxed"
         >
-          Designing and engineering refined digital experiences —
-          where aesthetics meet scalable architecture.
+          Business-minded analyst with technical awareness —
+focused on structure, clarity, and scalable execution.
+Open to cross-functional and international environments.
         </motion.p>
 
         {/* Type animation */}
