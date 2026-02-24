@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "https://backend-8z39.onrender.com";
 
 export const addPageView = async () => {
   const res = await fetch(`${BASE_URL}/pageview`, { method: "POST" });
