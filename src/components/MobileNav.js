@@ -1,5 +1,4 @@
 import React from "react";
-import { DiGitBranch } from "react-icons/di";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -20,7 +19,7 @@ function MobileNav({ showNav, setShowNav }) {
       >
         {/* Nav Links */}
         <ul className="flex flex-col gap-6 text-lg">
-          {["Home", "Explore", "Craft", "Resume","Contact"].map((item) => (
+          {["/", "Explore", "Craft", "Resume","Contact"].map((item) => (
             <li key={item} className="relative group">
               <Link
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
