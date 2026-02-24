@@ -12,11 +12,11 @@ function Interduce() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative py-32 bg-[#F5F5DC] overflow-hidden">
+    <section className="relative py-32 bg-[#111] overflow-hidden">
 
       <div className="max-w-6xl mx-auto px-10 text-center">
 
-        <h2 className="text-3xl lg:text-4xl font-serif text-gray-800 tracking-wide mb-16">
+        <h2 className="text-3xl lg:text-4xl font-serif text-white tracking-wide mb-16">
           Who I Am
         </h2>
 
@@ -30,16 +30,15 @@ function Interduce() {
                 cursor-pointer
                 w-[180px] h-[180px] 
                 rounded-full 
-                bg-gradient-to-br from-[#F5F5DC]/80 to-white/50 
-                border border-gray-300
+                bg-black/40 
+                border border-white/20
                 backdrop-blur-md 
-                shadow-xl 
+                shadow-[0_20px_60px_rgba(0,0,0,0.4)]
                 flex items-center justify-center 
-                text-xl font-serif text-gray-800 
-                hover:scale-110 transition-all duration-500 
-                hover:shadow-2xl 
-                animate-float
                 text-center
+                text-lg lg:text-xl font-serif text-[#C6B58E] 
+                hover:scale-105 transition-all duration-500 
+                hover:shadow-[0_30px_80px_rgba(198,181,142,0.4)]
                 p-4
               "
             >
