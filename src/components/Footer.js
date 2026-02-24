@@ -11,27 +11,11 @@ function Footer() {
         Designed and Developed by Vesper
       </p>
       <p className="text-sm font-semibold text-center m-2">
-        Copyright © 2024 Vesper
+        Copyright © 2024 Ves
       </p>
       <span className="flex items-center justify-center gap-7 m-2">
         <a
-          href="https://github.com/riteshk-007"
-          target="_blank"
-          rel="noreferrer"
-          className="text-white"
-        >
-          <BsGithub />
-        </a>
-        <a
-          href="https://twitter.com/Riteshk_007"
-          target="_blank"
-          rel="noreferrer"
-          className="text-white"
-        >
-          <RiTwitterXFill />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/ritesh-kumar-8064b626b"
+          href="https://www.linkedin.com/in/vesper-yang/"
           target="_blank"
           rel="noreferrer"
           className="text-white"
@@ -39,7 +23,7 @@ function Footer() {
           <FaLinkedinIn />
         </a>
         <a
-          href="https://www.instagram.com/riteshk_007/?igshid=MzNlNGNkZWQ4Mg%3D%3D"
+          href="https://www.instagram.com/vale_vesper/"
           target="_blank"
           rel="noreferrer"
           className="text-white"
