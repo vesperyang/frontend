@@ -116,13 +116,13 @@ function TravelSection() {
 ------------------------ */
 
 const photos = [
-  "/Photography/6.jpg",
-  "/Photography/7.jpg",
-  "/Photography/4.jpg",
-  "/Photography/3.jpg",
-  "/Photography/2.jpg",
-  "/Photography/1.jpg",
-  "/Photography/5.jpg",
+  "/Photography/balloon.jpg",
+  "/Photography/brisbane.jpg",
+  "/Photography/sunset.jpg",
+  "/Photography/egypt.jpg",
+  "/Photography/jordan.jpg",
+  "/Photography/roof.jpg",
+  "/Photography/vietnam.jpg",
 ];
 
 function PhotographySection() {
