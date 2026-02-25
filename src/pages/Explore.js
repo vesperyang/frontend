@@ -147,12 +147,12 @@ function LifestyleSection() {
       </p>
       <div className="grid md:grid-cols-2 gap-16 items-center">
         <img
-          src="/images/fitness.jpg"
+          src="/gym.jpg"
           alt="gym"
           className="rounded-xl object-cover"
         />
         <img
-          src="/images/cat.jpg"
+          src="/cat.jpg"
           alt="cat"
           className="rounded-xl object-cover"
         />
